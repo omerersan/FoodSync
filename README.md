@@ -30,11 +30,14 @@ FoodSync, kullanıcıların beslenme alışkanlıklarını iyileştirmek, yemek 
 
 ## Özellikler
 
-- Yapay Zeka Destekli Yemek Planları: Kullanıcıların diyet tercihlerine ve sağlık hedeflerine uygun haftalık yemek planları oluşturur.
+- Yapay Zeka Destekli Yemek Planları
+Kullanıcıların diyet tercihlerine, alerji durumlarına ve sağlık hedeflerine uygun haftalık yemek planları oluşturur. Yapay zeka, her kullanıcının bireysel ihtiyaçlarına göre esnek ve kişiselleştirilmiş öneriler sunar.
 
-- Akıllı Alışveriş Listesi: Yemek planına göre eksik malzemeleri otomatik olarak alışveriş listesine ekler.
+- Akıllı Alışveriş Listesi
+Yemek planına göre gerekli malzemeleri analiz ederek, eksik olanları otomatik olarak alışveriş listesine ekler. Kullanıcılar mevcut malzemelerini işaretleyerek alışveriş sürecini daha verimli hale getirebilir.
 
-- Beslenme Takibi ve İyileştirme Önerileri: Yapay zeka, kullanıcıların yemek alışkanlıklarını izleyerek daha sağlıklı seçenekler sunar ve zamanla beslenme alışkanlıklarını iyileştirmeyi hedefler.
+- Beslenme Takibi ve İyileştirme Önerileri
+Yapay zeka, kullanıcıların yemek alışkanlıklarını izler ve daha sağlıklı seçenekler sunar. Uzun vadede, kullanıcıların beslenme alışkanlıklarını iyileştirmeyi hedefler ve gelişim raporlarıyla destek sağlar.
 
   
 
@@ -44,19 +47,19 @@ FoodSync, kullanıcıların beslenme alışkanlıklarını iyileştirmek, yemek 
 
 - Dart
 
-- [Diğer teknolojiler]
-
   
 
 ## Başlangıç
 
   ### Gereksinimler
 
-- Flutter SDK (sürüm X.X.X)
+- Flutter SDK (3.24.5)
 
-- Dart SDK (sürüm X.X.X)
+- Dart SDK (3.5.4)
 
-- [Diğer gerekli yazılımlar]
+- Visual Studio Code
+
+- Android Studio
 
   
 
@@ -124,7 +127,14 @@ lib/
 
 ## Ekran Görüntüleri
 
-[Uygulama ekran görüntüleri buraya eklenecek]
+![Yükleme Ekranı](assets/images/yüklemeekranı.png)
+![Ana Sayfa Ekranı](assets/images/anasayfa.png)
+![Kısayol Penceresi](assets/images/kısayolpenceresi.png)
+![Tarif ve Arama Ekranı](assets/images/tarifarama.png)
+![Tarif Ekranı](assets/images/tarif.png)
+![Yemek Planı Ekranı](assets/images/haftalıkyemek.png)
+![Profil Ekranı](assets/images/profil.png)
+
 
   
 
@@ -144,7 +154,7 @@ lib/
 
 ## Lisans
 
-[Lisans türü] kapsamında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
+[MIT license] kapsamında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
 
   
 
@@ -153,3 +163,6 @@ lib/
 - Proje Bağlantısı: [https://github.com/omerersan/FoodSync.git]
 
 - İstinye Üniversitesi: [https://www.istinye.edu.tr/](https://www.istinye.edu.tr/)
+
+## Teşekkürler
+  İstinye Üniversitesi'ne destekleri için teşekkür ederiz.
