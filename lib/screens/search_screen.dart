@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widgets/bottom_menu.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});
@@ -139,6 +140,7 @@ class SearchScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }
@@ -184,6 +186,7 @@ class RecipeDetailScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }

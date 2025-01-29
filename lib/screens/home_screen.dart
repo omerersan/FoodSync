@@ -1,9 +1,13 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
+import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/core/constants.dart';
-import 'package:flutter_app/widgets/bottom_menu.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+
+import '../core/constants.dart';
+import '../core/themes.dart';
+import '../widgets/bottom_menu.dart';
+import '../widgets/suggested_action_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,179 +15,163 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: arkaplanRengim,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 40, 167, 69),
-        title: const Text('FoodSync'),
+        title:
+            Text('FoodSync', style: Theme.of(context).textTheme.headlineMedium),
+        centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.app),
-            onPressed: () {},
+            icon: Icon(CupertinoIcons.moon),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
           ),
         ],
       ),
       drawer: Drawer(
-        backgroundColor: const Color.fromARGB(255, 167, 220, 168),
-        elevation: 0,
         child: Column(
           children: [
-            const SizedBox(
-              height: 200,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    CupertinoIcons.person_circle,
-                    size: 80,
-                    color: Colors.white,
-                  ),
-                  SizedBox(height: 10),
-                ],
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  CupertinoIcons.person_circle,
+                  size: 50,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+              ),
+              accountName: Text("Hoşgeldin, Ömer"),
+              accountEmail: null,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.home),
-              title: const Text('Ana Sayfa'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+              leading: Icon(CupertinoIcons.home),
+              title: Text('Ana Sayfa'),
+              onTap: () => Navigator.pop(context),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.search),
-              title: const Text('Arama'),
-              onTap: () {
-                context.go("/search");
-              },
+              leading: Icon(CupertinoIcons.search),
+              title: Text('Arama Geçmişi'),
+              onTap: () => context.push("/search"),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.person),
-              title: const Text('Profile'),
-              onTap: () {
-                context.go("/profile");
-              },
+              leading: Icon(CupertinoIcons.person),
+              title: Text('Profil'),
+              onTap: () => context.push("/profile"),
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.settings),
-              title: const Text('Ayarlar'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+              leading: Icon(CupertinoIcons.settings),
+              title: Text('Ayarlar'),
+              onTap: () => context.push("/settings"),
+            ),
+            Spacer(),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Çıkış Yap'),
+              onTap: () => context.go("/login"),
             ),
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Günlük Yemek Önerileri',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
             Expanded(
-              child: ListView(scrollDirection: Axis.horizontal, children: [
-                _buildFoodCard('Spagetti', 'Lezzetli İtalyan Makarnası',
-                    'assets/images/spaghetti.jpg'),
-                _buildFoodCard('Tavuklu Salata', 'Sağlıklı ve Lezzetli',
-                    'assets/images/salad.jpg'),
-                _buildFoodCard(
-                    'Lazanya', 'İtalyan Mutfağı', 'assets/images/lasagna.jpg'),
-                _buildFoodCard('Sushi', 'Japon Mutfağının En Ünlü Bireyi',
-                    'assets/images/sushi.jpg'),
-                _buildFoodCard('Köfte', 'Türk Mutfağının Vazgeçilmezi',
-                    'assets/images/köfte.jpg'),
-                _buildFoodCard('Pizza', 'İtalyanların Vazgeçilmezi',
-                    'assets/images/pizza.jpg'),
-              ]),
+              flex: 3,
+              child: Container(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Günlük Yemek Önerileri",
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    SizedBox(height: 8),
+                    Expanded(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          _buildFoodSuggestionCard(
+                              "assets/images/spaghetti.jpg", "Spagetti"),
+                          _buildFoodSuggestionCard(
+                              "assets/images/salad.jpg", "Tavuklu Salata"),
+                          _buildFoodSuggestionCard(
+                              "assets/images/köfte.jpg", "İnegöl Köfte"),
+                          _buildFoodSuggestionCard(
+                              "assets/images/pizza.jpg", "İtalyan Pizza"),
+                          _buildFoodSuggestionCard(
+                              "assets/images/sushi.jpg", "Sushi"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            const SizedBox(height: 20),
-            const Text(
-              'Kısa Rota',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildActionButton(Icons.shopping_cart, 'Alışverişe Başla'),
-                _buildActionButton(Icons.restaurant, 'Yemek Pişir'),
-              ],
+            Expanded(
+              flex: 3,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                ),
+                child: ListView(
+                  padding: EdgeInsets.all(24),
+                  children: [
+                    SuggestedActionCard(
+                      icon: Icons.chat,
+                      title: "Sohbet Başlat",
+                      subtitle: "Yapay zeka ile sohbet edin",
+                      onTap: () => context.push("/voice"),
+                    ),
+                    SizedBox(height: 16),
+                    SuggestedActionCard(
+                      icon: Icons.history,
+                      title: "Son Aramalar",
+                      subtitle: "Geçmiş aramalarınızı görüntüleyin",
+                      onTap: () => context.push("/search"),
+                    ),
+                    SizedBox(height: 16),
+                    SuggestedActionCard(
+                      icon: Icons.settings,
+                      title: "Ayarlar",
+                      subtitle: "Uygulama ayarlarını özelleştirin",
+                      onTap: () => context.push("/settings"),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: const BottomMenu(),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 
-  Widget _buildFoodCard(String foodName, String description, String imagePath) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      elevation: 5,
+  Widget _buildFoodSuggestionCard(String imagePath, String title) {
+    return Container(
+      width: 200,
+      margin: EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.cover,
-              height: 120,
-              width: 160,
-            ),
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(imagePath,
+                height: 150, width: 200, fit: BoxFit.cover),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 8),
           Text(
-            foodName,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              description,
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[600],
-              ),
-              textAlign: TextAlign.center,
-            ),
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildActionButton(IconData icon, String label) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(255, 40, 167, 69),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      ),
-      icon: Icon(
-        icon,
-        size: 30,
-      ),
-      label: Text(
-        label,
-        style: const TextStyle(
-          fontSize: 16,
-        ),
-      ),
-      onPressed: () {
-        if (kDebugMode) {
-          print('$label butonuna tıklandı');
-        }
-      },
     );
   }
 }

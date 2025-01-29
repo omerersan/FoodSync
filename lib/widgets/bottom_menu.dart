@@ -9,7 +9,7 @@ class BottomMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 70,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -18,7 +18,7 @@ class BottomMenu extends StatelessWidget {
             onPressed: () {
               context.go("/home");
             },
-            icon: const Icon(
+            icon: Icon(
               CupertinoIcons.home,
             ),
           ),
@@ -26,21 +26,31 @@ class BottomMenu extends StatelessWidget {
             onPressed: () {
               context.go("/search");
             },
-            icon: const Icon(
+            icon: Icon(
               CupertinoIcons.search,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              context.go("/voice");
+            },
+            icon: Icon(
+              Icons.android,
             ),
           ),
           IconButton(
             onPressed: () {
               context.go("/planing");
             },
-            icon: const Icon(Icons.calendar_today),
+            icon: Icon(
+              Icons.history,
+            ),
           ),
           IconButton(
             onPressed: () {
               context.go("/profile");
             },
-            icon: const Icon(
+            icon: Icon(
               CupertinoIcons.person,
             ),
           ),
