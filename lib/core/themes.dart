@@ -1,11 +1,6 @@
-// burada temalandirma + renkler + ... yazicaz.
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// import 'constants.dart';
-
-// theme_provider.dart
 class ThemeProvider with ChangeNotifier {
   bool _isDark = false;
   bool get isDark => _isDark;
@@ -56,9 +51,7 @@ final lightTheme = ThemeData(
     onSurface: colors["onSurface"]!,
   ),
   textTheme: TextTheme(
-    bodySmall: GoogleFonts.roboto(
-        // fontSize: 32,
-        ),
+    bodySmall: GoogleFonts.roboto(),
     bodyMedium: GoogleFonts.roboto(),
     bodyLarge: GoogleFonts.roboto(),
     labelSmall: GoogleFonts.roboto(),
@@ -90,9 +83,7 @@ final darkTheme = ThemeData(
     onSurface: darkColors["onSurface"]!,
   ),
   textTheme: TextTheme(
-    bodySmall: GoogleFonts.roboto(
-        // fontSize: 30,
-        ),
+    bodySmall: GoogleFonts.roboto(),
     bodyMedium: GoogleFonts.roboto(),
     bodyLarge: GoogleFonts.roboto(),
     labelSmall: GoogleFonts.roboto(),

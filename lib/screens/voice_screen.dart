@@ -19,7 +19,7 @@ class VoiceScreen extends StatelessWidget {
               SliverAppBar.medium(
                 actions: [
                   IconButton(
-                    icon: Icon(CupertinoIcons.moon),
+                    icon: const Icon(CupertinoIcons.moon),
                     onPressed: () {
                       context.read<ThemeProvider>().toggleTheme();
                     },
@@ -36,12 +36,12 @@ class VoiceScreen extends StatelessWidget {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
                       Card(
                         child: Padding(
-                          padding: EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(16),
                           child: Row(
                             children: [
                               CircleAvatar(
@@ -54,7 +54,7 @@ class VoiceScreen extends StatelessWidget {
                                         .colorScheme
                                         .onPrimary),
                               ),
-                              SizedBox(width: 16),
+                              const SizedBox(width: 16),
                               Expanded(
                                 child: Text(
                                   "Merhaba! Bugün ne yemek istersiniz?",
@@ -65,15 +65,15 @@ class VoiceScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 24),
+                      const SizedBox(height: 24),
                       Text(
                         "Hızlı İşlemler",
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       GridView.count(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         crossAxisCount: 2,
                         mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
@@ -104,18 +104,18 @@ class VoiceScreen extends StatelessWidget {
                             onTap: () => showDialog(
                               context: context,
                               builder: (context) => AlertDialog(
-                                icon: Icon(Icons.warning),
-                                title: Text("Uyarı"),
-                                content: Text(
+                                icon: const Icon(Icons.warning),
+                                title: const Text("Uyarı"),
+                                content: const Text(
                                     "Hesabınızı silmek istediğinizden emin misiniz?"),
                                 actions: [
                                   TextButton(
                                     onPressed: () => context.pop(),
-                                    child: Text("İptal"),
+                                    child: const Text("İptal"),
                                   ),
                                   FilledButton(
                                     onPressed: () {},
-                                    child: Text("Sil"),
+                                    child: const Text("Sil"),
                                   ),
                                 ],
                               ),
@@ -135,10 +135,11 @@ class VoiceScreen extends StatelessWidget {
             right: 16,
             child: Card(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: "Yemek için fikir mi lazım? Başlayalım!",
@@ -148,11 +149,11 @@ class VoiceScreen extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.mic),
+                      icon: const Icon(Icons.mic),
                     ),
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.send),
+                      icon: const Icon(Icons.send),
                     ),
                   ],
                 ),
@@ -161,7 +162,7 @@ class VoiceScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }
@@ -173,6 +174,7 @@ class ActionCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const ActionCard({
+    super.key,
     required this.icon,
     required this.title,
     required this.color,
@@ -193,7 +195,7 @@ class ActionCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(icon, size: 32, color: color),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 title,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(

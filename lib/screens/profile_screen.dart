@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
+// ignore: unused_import
 import '../core/constants.dart';
 import '../core/themes.dart';
 import '../widgets/bottom_menu.dart';
@@ -14,10 +15,10 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profil"),
+        title: const Text("Profil"),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon),
+            icon: const Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -25,9 +26,9 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: [
-          Card(
+          const Card(
             child: Padding(
               padding: EdgeInsets.all(16),
               child: Column(
@@ -54,13 +55,13 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           FilledButton.icon(
             onPressed: () {},
-            icon: Icon(Icons.logout),
-            label: Text("Hesaptan Çıkış Yap"),
+            icon: const Icon(Icons.logout),
+            label: const Text("Hesaptan Çıkış Yap"),
             style: FilledButton.styleFrom(
-              minimumSize: Size(double.infinity, 50),
+              minimumSize: const Size(double.infinity, 50),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -69,15 +70,15 @@ class ProfileScreen extends StatelessWidget {
           if (context.canPop())
             TextButton.icon(
               onPressed: () => context.pop(),
-              icon: Icon(Icons.arrow_back),
-              label: Text("Geri Dön"),
+              icon: const Icon(Icons.arrow_back),
+              label: const Text("Geri Dön"),
               style: TextButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
               ),
             ),
         ],
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

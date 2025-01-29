@@ -14,13 +14,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ayarlar'),
+        title: const Text('Ayarlar'),
       ),
       body: ListView(
         children: [
           ListTile(
-            leading: Icon(Icons.palette),
-            title: Text('Tema'),
+            leading: const Icon(Icons.palette),
+            title: const Text('Tema'),
             trailing: Switch(
               value: Theme.of(context).brightness == Brightness.dark,
               onChanged: (value) {
@@ -30,8 +30,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Bildirimler'),
+            leading: const Icon(Icons.notifications),
+            title: const Text('Bildirimler'),
             trailing: Switch(
               value: true,
               onChanged: (value) {},
@@ -39,8 +39,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.language),
-            title: Text('Dil'),
+            leading: const Icon(Icons.language),
+            title: const Text('Dil'),
             trailing: DropdownButton<String>(
               value: 'TR',
               items: ['TR', 'EN'].map((String value) {
@@ -54,22 +54,22 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Uygulama Hakkında'),
-            trailing: Icon(Icons.arrow_forward_ios, size: 16),
+            leading: const Icon(Icons.info),
+            title: const Text('Uygulama Hakkında'),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
             onTap: () {},
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.privacy_tip),
-            title: Text('Gizlilik Politikası'),
-            trailing: Icon(Icons.arrow_forward_ios, size: 16),
+            leading: const Icon(Icons.privacy_tip),
+            title: const Text('Gizlilik Politikası'),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
             onTap: () {},
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.delete, color: Colors.red),
-            title: Text(
+            leading: const Icon(Icons.delete, color: Colors.red),
+            title: const Text(
               'Hesabı Sil',
               style: TextStyle(color: Colors.red),
             ),

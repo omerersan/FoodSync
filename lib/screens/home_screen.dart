@@ -1,10 +1,8 @@
-import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '../core/constants.dart';
 import '../core/themes.dart';
 import '../widgets/bottom_menu.dart';
 import '../widgets/suggested_action_card.dart';
@@ -21,7 +19,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon),
+            icon: const Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -40,37 +38,37 @@ class HomeScreen extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldin, Ömer"),
+              accountName: const Text("Hoşgeldin, Ömer"),
               accountEmail: null,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.home),
-              title: Text('Ana Sayfa'),
+              leading: const Icon(CupertinoIcons.home),
+              title: const Text('Ana Sayfa'),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.search),
-              title: Text('Arama Geçmişi'),
+              leading: const Icon(CupertinoIcons.search),
+              title: const Text('Arama Geçmişi'),
               onTap: () => context.push("/search"),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.person),
-              title: Text('Profil'),
+              leading: const Icon(CupertinoIcons.person),
+              title: const Text('Profil'),
               onTap: () => context.push("/profile"),
             ),
             ListTile(
-              leading: Icon(CupertinoIcons.settings),
-              title: Text('Ayarlar'),
+              leading: const Icon(CupertinoIcons.settings),
+              title: const Text('Ayarlar'),
               onTap: () => context.push("/settings"),
             ),
-            Spacer(),
-            Divider(),
+            const Spacer(),
+            const Divider(),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Çıkış Yap'),
+              leading: const Icon(Icons.logout),
+              title: const Text('Çıkış Yap'),
               onTap: () => context.go("/login"),
             ),
           ],
@@ -82,7 +80,7 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Container(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -90,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                       "Günlük Yemek Önerileri",
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Expanded(
                       child: ListView(
                         scrollDirection: Axis.horizontal,
@@ -116,11 +114,12 @@ class HomeScreen extends StatelessWidget {
               flex: 3,
               child: Container(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceVariant,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(32)),
                 ),
                 child: ListView(
-                  padding: EdgeInsets.all(24),
+                  padding: const EdgeInsets.all(24),
                   children: [
                     SuggestedActionCard(
                       icon: Icons.chat,
@@ -128,14 +127,14 @@ class HomeScreen extends StatelessWidget {
                       subtitle: "Yapay zeka ile sohbet edin",
                       onTap: () => context.push("/voice"),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     SuggestedActionCard(
                       icon: Icons.history,
                       title: "Son Aramalar",
                       subtitle: "Geçmiş aramalarınızı görüntüleyin",
                       onTap: () => context.push("/search"),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     SuggestedActionCard(
                       icon: Icons.settings,
                       title: "Ayarlar",
@@ -149,14 +148,14 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 
   Widget _buildFoodSuggestionCard(String imagePath, String title) {
     return Container(
       width: 200,
-      margin: EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         children: [
           ClipRRect(
@@ -164,10 +163,10 @@ class HomeScreen extends StatelessWidget {
             child: Image.asset(imagePath,
                 height: 150, width: 200, fit: BoxFit.cover),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ],

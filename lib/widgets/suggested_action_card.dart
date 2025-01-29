@@ -7,6 +7,7 @@ class SuggestedActionCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const SuggestedActionCard({
+    super.key,
     required this.icon,
     required this.title,
     required this.subtitle,
@@ -25,7 +26,7 @@ class SuggestedActionCard extends StatelessWidget {
         ),
         title: Text(title),
         subtitle: Text(subtitle),
-        trailing: Icon(Icons.arrow_forward_ios, size: 16),
+        trailing: const Icon(Icons.arrow_forward_ios, size: 16),
       ),
     );
   }
