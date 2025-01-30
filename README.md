@@ -127,13 +127,37 @@ lib/
 
 ## Ekran Görüntüleri
 
-![Yükleme Ekranı](assets/images/yüklemeekranı.png)
-![Ana Sayfa Ekranı](assets/images/anasayfa.png)
-![Kısayol Penceresi](assets/images/kısayolpenceresi.png)
-![Tarif ve Arama Ekranı](assets/images/tarifarama.png)
-![Tarif Ekranı](assets/images/tarif.png)
-![Yemek Planı Ekranı](assets/images/haftalıkyemek.png)
-![Profil Ekranı](assets/images/profil.png)
+![Loading Screen](assets/images/screenshots/Light%20Theme/loadingscreen.png)
+
+## Light Theme 
+![Home Screen ](assets/images/screenshots/Light%20Theme/homescreen.png)
+![Home Screen ](assets/images/screenshots/Light%20Theme/homescreen2.png)
+![Search Screen ](assets/images/screenshots/Light%20Theme/searchscreen.png)
+![Search Screen ](assets/images/screenshots/Light%20Theme/searchscreen2.png)
+![Voice Screen ](assets/images/screenshots/Light%20Theme/voicescreen.png)
+![Login Screen ](assets/images/screenshots/Light%20Theme/loginscreen.png)
+![Register Screen ](assets/images/screenshots/Light%20Theme/registerscreen.png)
+![Planing Screen ](assets/images/screenshots/Light%20Theme/planingscreen.png)
+![Planing Screen ](assets/images/screenshots/Light%20Theme/planingscreen2.png)
+![Profile Screen ](assets/images/screenshots/Light%20Theme/profilescreen.png)
+![Settings Screen ](assets/images/screenshots/Light%20Theme/settingsscreen.png)
+
+
+## Dark Theme 
+![Home Screen ](assets/images/screenshots/Dark%20Theme/homescreen.dark.png)
+![Home Screen ](assets/images/screenshots/Dark%20Theme/homescreen2.dark.png)
+![Search Screen ](assets/images/screenshots/Dark%20Theme/searchscreen.dark.png)
+![Search Screen ](assets/images/screenshots/Dark%20Theme/searchscreen2.dark.png)
+![Voice Screen ](assets/images/screenshots/Dark%20Theme/voicescreen.dark.png)
+![Login Screen ](assets/images/screenshots/Dark%20Theme/loginscreen.dark.png)
+![Register Screen ](assets/images/screenshots/Dark%20Theme/registerscreen.dark.png)
+![Planing Screen ](assets/images/screenshots/Dark%20Theme/planingscreen.dark.png)
+![Planing Screen ](assets/images/screenshots/Dark%20Theme/planingscreen2.dark.png)
+![Profile Screen ](assets/images/screenshots/Dark%20Theme/profilescreen.dark.png)
+![Settings Screen ](assets/images/screenshots/Dark%20Theme/settingsscreen.dark.png)
+
+
+
 
 
   

@@ -21,8 +21,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Bilgileriniz Giriniz"),
-          // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-          // margin: EdgeInsets.all(20),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
           showCloseIcon: true,
@@ -33,8 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text("Sifre Minimum 8 haneli olabilir."),
-            // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-            // margin: EdgeInsets.all(20),
             behavior: SnackBarBehavior.floating,
             backgroundColor: Colors.red,
             showCloseIcon: true,

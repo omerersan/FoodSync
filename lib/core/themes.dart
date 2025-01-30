@@ -12,12 +12,11 @@ class ThemeProvider with ChangeNotifier {
 }
 
 const colors = {
-  "primary": Color.fromARGB(255, 76, 175, 80), // Ana Renk: Yeşil (#4CAF50)
+  "primary": Color.fromARGB(255, 76, 175, 80),
   "onPrimary": Color.fromARGB(255, 255, 255, 255),
-  "secondary":
-      Color.fromARGB(255, 255, 112, 67), // İkincil Renk: Turuncu (#FF7043)
+  "secondary": Color.fromARGB(255, 255, 112, 67),
   "onSecondary": Color.fromARGB(255, 255, 255, 255),
-  "surface": Color.fromARGB(255, 255, 255, 255), // Arka Plan: Beyaz (#FFFFFF)
+  "surface": Color.fromARGB(255, 255, 255, 255),
   "onSurface": Color.fromARGB(255, 82, 76, 100),
   "success": Colors.green,
   "error": Colors.red,
@@ -25,12 +24,11 @@ const colors = {
 };
 
 const darkColors = {
-  "primary": Color.fromARGB(255, 76, 175, 80), // Ana Renk: Yeşil (#4CAF50)
+  "primary": Color.fromARGB(255, 76, 175, 80),
   "onPrimary": Color.fromARGB(255, 255, 255, 255),
-  "secondary":
-      Color.fromARGB(255, 255, 235, 59), // İkincil Renk: Sarı (#FFEB3B)
+  "secondary": Color.fromARGB(255, 255, 235, 59),
   "onSecondary": Color.fromARGB(255, 0, 0, 0),
-  "surface": Color.fromARGB(255, 18, 18, 18), // Arka Plan: Siyah (#121212)
+  "surface": Color.fromARGB(255, 18, 18, 18),
   "onSurface": Color.fromARGB(255, 245, 245, 245),
   "success": Colors.green,
   "error": Colors.red,

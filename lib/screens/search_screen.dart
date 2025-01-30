@@ -39,7 +39,7 @@ class SearchScreen extends StatelessWidget {
               '4. Yanına limon dilimleri ile servis yapın.'
     },
     {
-      'title': 'Karnabahar Kızartması',
+      'title': 'Karnıbahar Kızartması',
       'ingredients':
           'Karnabahar, Un, Yumurta, Galeta Unu, Tuz, Karabiber, Kızartma Yağı',
       'cookTime': '30 dk',
