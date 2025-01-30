@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(CupertinoIcons.search),
-              title: const Text('Arama Geçmişi'),
+              title: const Text('Tarif ve Arama'),
               onTap: () => context.push("/search"),
             ),
             ListTile(
@@ -130,8 +130,9 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     SuggestedActionCard(
                       icon: Icons.history,
-                      title: "Son Aramalar",
-                      subtitle: "Geçmiş aramalarınızı görüntüleyin",
+                      title: "Tarif ve Arama",
+                      subtitle:
+                          "Binlerce tarif arasından dilediğini ara ve keşfet",
                       onTap: () => context.push("/search"),
                     ),
                     const SizedBox(height: 16),

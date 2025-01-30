@@ -143,6 +143,9 @@ lib/
 ![Settings Screen ](assets/images/screenshots/Light%20Theme/settingsscreen.png)
 
 
+[![Watch the video](https://img.youtube.com/vi/kZ9Lh1L6m3o/0.jpg)](https://www.youtube.com/watch?v=kZ9Lh1L6m3o)
+
+
 ## Dark Theme 
 ![Home Screen ](assets/images/screenshots/Dark%20Theme/homescreen.dark.png)
 ![Home Screen ](assets/images/screenshots/Dark%20Theme/homescreen2.dark.png)
@@ -157,10 +160,8 @@ lib/
 ![Settings Screen ](assets/images/screenshots/Dark%20Theme/settingsscreen.dark.png)
 
 
+[![Watch the video](https://img.youtube.com/vi/c_Y9qxqHxJ0/0.jpg)](https://www.youtube.com/watch?v=c_Y9qxqHxJ0)
 
-
-
-  
 
 ## Projeye Katkı Sağlama
 
